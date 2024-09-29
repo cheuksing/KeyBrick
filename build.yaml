@@ -17,6 +17,8 @@
 #     artifact-name: corne_left_with_logging
 #
 ---
+board: [ "seeeduino_xiao_ble" ]
+shield: [ "keybrick_left", "keybrick_right" ]
 include:
   - board: seeeduino_xiao_ble
     shield: keybrick_left
