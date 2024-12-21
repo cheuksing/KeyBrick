@@ -11,6 +11,11 @@
 #define FKEY 6
 #define FN 7
 
+&sl {
+    release-after-ms = <2000>;
+    /delete-property/ quick-release;
+};
+
 / {
         keymap {
                 compatible = "zmk,keymap";
@@ -48,12 +53,12 @@
 // |  TAB   |  Q  |  W  |  E  |  R  |              |      |     |     |     |     |
 // |  CAPS  |  A  |  S  |  D  |  F  |              |      |     |     |     |     |
 // |  SHIFT |  Z  |  X  |  C  |  V  |              |      |     |     |     |     |
-// |  CTRL  | T   |  B  |  B  | SPACE |            |      |     |     |     |     |
+// |  CTRL  |  T  |  B  |  B  | SPACE |            | FKEY |     | SLFN|     |     |
                         bindings = <
    &kp TAB      &kp Q      &kp W     &kp E     &kp R                   &none       &none     &none         &none     &none
    &kp CAPS     &kp A      &kp S     &kp D     &kp F                   &none       &none     &none         &none     &none
    &kp LSHIFT   &kp Z      &kp X     &kp C     &kp V                   &none       &none     &none         &none     &none
-   &kp LCTRL    &kp T      &kp B     &kp G     &kp SPACE               &sl FKEY    &sl FN    &none         &none     &none
+   &kp LCTRL    &kp T      &kp B     &kp G     &kp SPACE               &sl FKEY    &none     &sl FN         &none     &none
                         >;
                 };
 
@@ -62,12 +67,12 @@
 // |  !  |  @  |  #  |  $  |  %  |              |  ^  |  &  |  *  |  (  |  )  |
 // | ESC |     |     |     |     |              |  +  |  -  |  |  |  {  |  }  |
 // |     |     |     |     |     |              |  =  |  _  |  \  |  [  |  ]  |
-// |     |     |     |     |     |              |     |     | SLFN|     |     |
+// |     |     |     |     |     |              | FKEY|     | SLFN|     |     |
                         bindings = <
    &kp EXCL   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT               &kp CARET   &kp AMPS  &kp STAR      &kp LPAR  &kp RPAR
-   &kp ESC     &none     &none     &none     &none                   &kp PLUS    &kp MINUS &kp PIPE      &kp LBRC  &kp RBRC
+   &kp ESC    &none     &none     &none     &none                   &kp PLUS    &kp MINUS &kp PIPE      &kp LBRC  &kp RBRC
    &none      &none     &none     &none     &none                   &kp EQUAL   &kp UNDER &kp NUBS      &kp LBKT  &kp RBKT
-   &none      &none     &none     &none     &none                   &none       &none     &sl FN        &none     &none
+   &none      &none     &none     &none     &none                   &sl FKEY    &none     &sl FN        &none     &none
                         >;
                 };
 
